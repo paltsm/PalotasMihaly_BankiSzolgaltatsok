@@ -11,6 +11,7 @@ public class HitelSzamla extends Szamla {
 	public int getHitelKeret() {
 		return hitelKeret;
 	}
+
 	@Override
 	public boolean kivesz(int osszeg) {
 		if (osszeg > hitelKeret + aktualisEgyenleg) {

@@ -12,10 +12,13 @@ public abstract class Szamla extends BankiSzolgaltatas {
 		return aktualisEgyenleg;
 	}
 
-	public boolean befizet(int osszeg) {
+	public void befizet(int osszeg) {
 		aktualisEgyenleg += osszeg;
-		return true;
 	}
 
 	public abstract boolean kivesz(int osszeg);
+
+	public Kartya ujKartya(String kartyaszam) {
+		return new Kartya(this.getTulajdonos(), Szamla.this, kartyaszam);
+	}
 }

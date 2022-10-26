@@ -6,7 +6,7 @@ public class MegtakaritasiSzamla extends Szamla {
 
 	public MegtakaritasiSzamla(Tulajdonos tulajdonos) {
 		super(tulajdonos);
-		this.kamat=alapKamat;
+		this.kamat = alapKamat;
 	}
 
 	public double getKamat() {
@@ -17,16 +17,17 @@ public class MegtakaritasiSzamla extends Szamla {
 		this.kamat = kamat;
 	}
 
+	public void kamatJovairas() {
+		aktualisEgyenleg *= kamat;
+	}
+
 	@Override
 	public boolean kivesz(int osszeg) {
 		if (aktualisEgyenleg - osszeg < 0) {
 			return false;
 		} else {
+			aktualisEgyenleg-=osszeg;
 			return true;
 		}
-	}
-
-	public void kamatJovairas() {
-		aktualisEgyenleg *= kamat;
 	}
 }
